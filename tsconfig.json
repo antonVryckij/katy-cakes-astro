@@ -8,12 +8,16 @@
         "name": "@astrojs/ts-plugin"
       }
     ],
+    "baseUrl": ".",
     "strictNullChecks": true,
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "paths": {
       "@components/*": ["src/components/*"],
-      "@layouts/*": ["src/layouts/*"]
+      "@layouts/*": ["src/layouts/*"],
+      "@constants/*": ["src/constants/*"],
+      "@types/*": ["src/types/*"],
+      "@images/*": ["src/images/*"]
     }
   }
 }
