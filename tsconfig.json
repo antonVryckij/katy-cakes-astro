@@ -17,7 +17,8 @@
       "@layouts/*": ["src/layouts/*"],
       "@constants/*": ["src/constants/*"],
       "@types/*": ["src/types/*"],
-      "@images/*": ["src/images/*"]
+      "@images/*": ["src/images/*"],
+      "@styles/*": ["src/styles/*"]
     }
   }
 }
