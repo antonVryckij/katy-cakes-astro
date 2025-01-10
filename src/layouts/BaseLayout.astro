@@ -15,29 +15,7 @@ const { title } = Astro.props;
   <head title={title}>
     <meta charset="utf-8" />
     <!-- -->
-    <script>
-      const html = document.querySelector('html');
-      const themeToggle = document.getElementById('theme-toggle');
-
-      const preferDark = matchMedia('(prefers-color-scheme: dark)').matches;
-      const isLight = localStorage.getItem('ck_theme') === 'light' && !preferDark;
-      const isDark = localStorage.getItem('ck_theme') === 'dark' && preferDark;
-
-      if (isLight && html?.classList.contains('dark')) html.classList.remove('dark');
-      else if (isDark && html?.classList.contains('light')) html.classList.remove('light');
-      else if (isDark && !html?.classList.contains('dark')) html?.classList.add('dark');
-      else if (isLight && !html?.classList.contains('light')) html?.classList.add('light');
-
-      themeToggle?.addEventListener('click', () => {
-        if (html?.classList.contains('dark')) {
-          html.classList.remove('dark');
-          localStorage.setItem('ck_theme', 'light');
-        } else {
-          html?.classList.add('dark');
-          localStorage.setItem('ck_theme', 'dark');
-        }
-      });
-    </script>
+    <script src="../scripts/theme-toggle.ts"></script>
   </head>
   <body class="dark:bg-gray-300">
     <Header />

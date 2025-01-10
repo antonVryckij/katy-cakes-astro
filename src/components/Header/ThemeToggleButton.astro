@@ -1,7 +1,13 @@
-<button
-  class="hidden lg:flex hover:cursor-pointer hover:bg-amber-100 rounded-[50%] p-2"
-  id="theme-toggle"
->
+---
+interface Props {
+  id: string;
+  class?: string;
+}
+
+const { id, class: className } = Astro.props;
+---
+
+<button class:list={['hover:cursor-pointer hover:bg-gray-100 rounded-full p-2', className]} id={id}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
