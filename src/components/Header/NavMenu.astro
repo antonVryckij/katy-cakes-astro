@@ -2,6 +2,7 @@
 import { HEADER_MENU } from '../../constants/navigation';
 import { Image } from 'astro:assets';
 import logoImg from '@images/logo.svg';
+import ThemeToggleButton from './ThemeToggleButton.astro';
 ---
 
 <div class="lg:hidden" role="dialog" aria-modal="true">
@@ -44,11 +45,7 @@ import logoImg from '@images/logo.svg';
           }
         </div>
         <div class="py-6">
-          <a
-            href="#"
-            class="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 text-gray-900 hover:bg-gray-50"
-            >Log in</a
-          >
+          <ThemeToggleButton />
         </div>
       </div>
     </div>
