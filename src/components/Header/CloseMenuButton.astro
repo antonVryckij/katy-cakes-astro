@@ -1,20 +1,14 @@
+---
+import CloseIcon from '@svg/close.svg';
+---
+
 <button
   type="button"
-  class="-m-2.5 rounded-full p-2 text-gray-700 hover:cursor-pointer hover:bg-gray-100"
+  class="-m-2.5 rounded-full p-2 hover:cursor-pointer hover:bg-gray-100/20"
   id="close-menu-button"
 >
   <span class="sr-only">Close menu</span>
-  <svg
-    class="size-6"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke-width="1.5"
-    stroke="currentColor"
-    aria-hidden="true"
-    data-slot="icon"
-  >
-    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12"></path>
-  </svg>
+  <CloseIcon class="size-6 fill-secondary" />
 </button>
 
 <script>

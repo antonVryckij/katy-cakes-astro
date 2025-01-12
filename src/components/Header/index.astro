@@ -1,29 +1,31 @@
 ---
-import { HEADER_MENU } from '../../constants/navigation';
-import { Image } from 'astro:assets';
-import logoImg from '@images/logo.svg';
+import { HEADER_MENU } from '@constants/navigation';
+import LogoIcon from '@svg/logo.svg';
 import ThemeToggleButton from './ThemeToggleButton.astro';
 import NavMenu from './NavMenu.astro';
-import HamburgerButton from './HamburgerButton.astro';
+import BurgerButton from './BurgerButton.astro';
 ---
 
 <header class="inset-x-0 top-0 sticky z-20 border-b-[1px]">
   <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
     <div class="flex">
       <a href="/" class="-m-1.5 p-1.5">
-        <span class="sr-only">Your Company</span>
-        <Image src={logoImg} alt="Logo image" height={42} />
+        <span class="sr-only">Katy Cakes Logo</span>
+        <LogoIcon class="fill-secondary" height={42} width={162} />
       </a>
     </div>
 
     <div class="flex lg:hidden">
-      <HamburgerButton />
+      <BurgerButton />
     </div>
 
     <div class="hidden lg:flex lg:gap-x-12">
       {
         HEADER_MENU.map(({ title, src }) => (
-          <a href={src} class="text-sm/6 text-gray-900">
+          <a
+            href={src}
+            class="text-sm/6 hover:underline decoration-primary decoration-2 underline-offset-8"
+          >
             {title}
           </a>
         ))

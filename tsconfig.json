@@ -17,8 +17,10 @@
       "@layouts/*": ["src/layouts/*"],
       "@constants/*": ["src/constants/*"],
       "@types/*": ["src/types/*"],
-      "@images/*": ["src/images/*"],
-      "@styles/*": ["src/styles/*"]
+      "@images/*": ["src/assets/images/*"],
+      "@styles/*": ["src/assets/styles/*"],
+      "@scripts/*": ["src/assets/scripts/*"],
+      "@svg/*": ["src/assets/svg/*"]
     }
   }
 }
