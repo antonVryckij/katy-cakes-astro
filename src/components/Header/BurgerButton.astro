@@ -1,0 +1,23 @@
+---
+import BurgerIcon from '@svg/burger.svg';
+---
+
+<button
+  type="button"
+  id="hamburger-button"
+  class="-m-2.5 inline-flex items-center hover:cursor-pointer dark:hover:bg-gray-100/20 hover:bg-gray-100 justify-center rounded-full p-2"
+>
+  <span class="sr-only">Open main menu</span>
+  <BurgerIcon class="size-6 fill-secondary" />
+</button>
+
+<script>
+  const button = document.getElementById('hamburger-button');
+  const navMenu = document.getElementById('nav-menu');
+
+  button?.addEventListener('click', () => {
+    if (navMenu?.classList.contains('hidden')) {
+      navMenu?.classList.remove('hidden');
+    }
+  });
+</script>

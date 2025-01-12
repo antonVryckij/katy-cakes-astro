@@ -14,10 +14,26 @@ const { title } = Astro.props;
 <html>
   <head title={title}>
     <meta charset="utf-8" />
-    <!-- -->
-    <script src="../scripts/theme-toggle.ts"></script>
+    <script src="@scripts/theme-toggle.ts"></script>
+    <style is:global>
+      :root {
+        --color-primary: #f5c332;
+        --color-secondary: #5b5b62;
+        --color-main-dark-blue: #231e41;
+
+        --color-main-bg: #ffffff;
+      }
+
+      .dark {
+        --color-primary: #f5c332;
+        --color-secondary: #fafafa;
+        --color-main-dark-blue: #231e41;
+
+        --color-main-bg: rgba(36, 33, 38, 0.9);
+      }
+    </style>
   </head>
-  <body class="dark:bg-gray-300">
+  <body class="bg-main-bg">
     <Header />
     <main class="px-8 py-12">
       <div class="flex">

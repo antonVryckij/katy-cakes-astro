@@ -1,7 +1,6 @@
 ---
 import { HEADER_MENU } from '../../constants/navigation';
-import { Image } from 'astro:assets';
-import logoImg from '@images/logo.svg';
+import LogoIcon from '@svg/logo.svg';
 import ThemeToggleButton from './ThemeToggleButton.astro';
 import CloseMenuButton from './CloseMenuButton.astro';
 ---
@@ -10,11 +9,12 @@ import CloseMenuButton from './CloseMenuButton.astro';
   <!-- Background backdrop, show/hide based on slide-over state. -->
   <div class="fixed inset-0 backdrop-blur-sm z-50" id="overlay"></div>
   <div
-    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
+    class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-main-bg px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10"
   >
     <div class="flex items-center justify-between border-b-[1px] pb-6">
       <a href="/" class="-m-1.5 p-1.5">
-        <Image src={logoImg} alt="Logo image" height={42} />
+        <span class="sr-only">Katy Cakes Logo</span>
+        <LogoIcon class="fill-secondary" height={42} width={162} />
       </a>
 
       <CloseMenuButton />
@@ -26,7 +26,7 @@ import CloseMenuButton from './CloseMenuButton.astro';
             HEADER_MENU.map(({ title, src }) => (
               <a
                 href={src}
-                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 text-gray-900 hover:bg-gray-50"
+                class="-mx-3 block rounded-lg px-3 py-2 text-base/7 hover:bg-gray-100/20"
               >
                 {title}
               </a>
