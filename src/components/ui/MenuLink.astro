@@ -1,0 +1,15 @@
+---
+import PrimaryLink from '@components/ui/PrimaryLink.astro';
+import MenuIcon from '@svg/menu.svg';
+import { PATH } from '@constants/navigation.ts';
+
+interface Props {
+  text?: string;
+}
+
+const { text = 'Наше меню' } = Astro.props;
+---
+
+<PrimaryLink href={PATH.MENU} text={text}>
+  <MenuIcon class="size-6" />
+</PrimaryLink>

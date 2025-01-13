@@ -1,0 +1,17 @@
+---
+import ArrowIcon from '@svg/arrow.svg';
+
+interface Props {
+  href: string;
+  text: string;
+}
+
+const { href, text } = Astro.props;
+---
+
+<a href={href} class="inline-flex items-center group font-medium hover:cursor-pointer">
+  <span class="inline-flex bg-secondary/15 group-hover:bg-secondary/10 p-4 border rounded-full">
+    <ArrowIcon class="size-6" />
+  </span>
+  <span class="ml-4">{text}</span>
+</a>
