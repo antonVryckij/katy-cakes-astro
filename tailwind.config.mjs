@@ -9,11 +9,11 @@ export default {
         sans: ['Rubik Variable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-        'dark-blue': 'var(--color-dark-blue)',
+        primary: 'rgba(var(--color-primary))',
+        secondary: 'rgba(var(--color-secondary))',
+        'dark-blue': 'rgba(var(--color-dark-blue))',
 
-        'main-bg': 'var(--color-main-bg)',
+        'main-bg': 'rgba(var(--color-main-bg))',
       },
     },
   },

@@ -3,42 +3,43 @@ import '@styles/tailwind.css';
 import '@fontsource-variable/rubik';
 
 import Header from '@components/Header/index.astro';
+import Footer from '@components/Footer/index.astro';
 
 interface Props {
   title: string;
+  class?: string;
 }
 
-const { title } = Astro.props;
+const { title, class: className } = Astro.props;
 ---
 
-<html>
+<html class="h-full">
   <head title={title}>
     <meta charset="utf-8" />
     <script src="@scripts/theme-toggle.ts"></script>
     <style is:global>
       :root {
-        --color-primary: #f5c332;
-        --color-secondary: #5b5b62;
-        --color-main-dark-blue: #231e41;
+        --color-primary: 245, 195, 50;
+        --color-secondary: 91, 91, 98;
+        --color-dark-blue: 35, 30, 65;
 
-        --color-main-bg: #ffffff;
+        --color-main-bg: 255, 255, 255;
       }
 
       .dark {
-        --color-primary: #f5c332;
-        --color-secondary: #fafafa;
-        --color-main-dark-blue: #231e41;
+        --color-primary: 245, 195, 50;
+        --color-secondary: 250, 250, 250;
+        --color-dark-blue: 35, 30, 65;
 
-        --color-main-bg: rgba(36, 33, 38, 0.9);
+        --color-main-bg: 36, 33, 38;
       }
     </style>
   </head>
-  <body class="bg-main-bg">
+  <body class="bg-main-bg flex flex-col h-full">
     <Header />
-    <main class="px-8 py-12">
-      <div class="flex">
-        <slot />
-      </div>
+    <main class:list={['px-10 lg:px-14', className]}>
+      <slot />
     </main>
+    <Footer />
   </body>
 </html>
