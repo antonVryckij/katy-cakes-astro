@@ -5,13 +5,14 @@ import heroImage from '@images/hero-section.png';
 import MenuLink from '@components/ui/MenuLink.astro';
 import { PATH } from '@constants/navigation.ts';
 import ArrowLink from '@components/ui/ArrowLink.astro';
+import Section from '@components/Section/index.astro';
 ---
 
 <BaseLayout title="Main Page">
-  <section
-    class="lg:h-[calc(100vh-75px)] flex flex-col lg:flex-row lg:py-10 py-16 md:py-18 justify-between gap-16 items-center"
+  <Section
+    slotWrapperClass="lg:min-h-[calc(100vh-84px)] flex flex-col lg:flex-row lg:py-10 py-16 md:py-18 justify-between gap-16 items-center"
   >
-    <div class="lg:flex-grow lg:max-w-[800px] w-full flex flex-col lg:items-start items-center">
+    <div class="lg:flex-grow w-full flex flex-col lg:items-start items-center">
       <span class="text-xs bg-slate-100 p-1 mb-6">Привіт, новий гостю!</span>
       <h1
         class="text-[46px] sm:text-[54px] lg:text-[72px] leading-none text-dark-blue text-center lg:text-left font-semibold mb-6"
@@ -27,9 +28,7 @@ import ArrowLink from '@components/ui/ArrowLink.astro';
     <div class="max-w-[500px]">
       <Picture src={heroImage} alt="Hero image" formats={['webp']} />
     </div>
-  </section>
+  </Section>
 
-  <section class="h-screen bg-green-500 px-8 py-12">
-    <h1>Another section</h1>
-  </section>
+  <Section class="h-[100px] bg-green-500"><h1>Another section</h1></Section>
 </BaseLayout>

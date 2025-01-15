@@ -1,0 +1,14 @@
+---
+interface Props {
+  class?: string;
+  slotWrapperClass?: string;
+}
+
+const { class: sectionClass, slotWrapperClass } = Astro.props;
+---
+
+<section class:list={[sectionClass]}>
+  <div class:list={['max-w-screen-xl my-0 ms-auto me-auto p-6 lg:p-8', slotWrapperClass]}>
+    <slot />
+  </div>
+</section>

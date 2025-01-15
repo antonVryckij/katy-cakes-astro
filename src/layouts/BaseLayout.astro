@@ -37,7 +37,7 @@ const { title, class: className } = Astro.props;
   </head>
   <body class="bg-main-bg flex flex-col h-full">
     <Header />
-    <main class:list={['px-10 lg:px-14', className]}>
+    <main class:list={[className]}>
       <slot />
     </main>
     <Footer />
