@@ -7,6 +7,7 @@ export default {
     extend: {
       fontFamily: {
         sans: ['Rubik Variable', ...defaultTheme.fontFamily.sans],
+        monoton: ['Monoton', ...defaultTheme.fontFamily.sans],
       },
       colors: {
         primary: 'rgba(var(--color-primary))',

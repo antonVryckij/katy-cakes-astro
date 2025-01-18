@@ -1,11 +1,15 @@
 ---
-import { Picture } from 'astro:assets';
+import '@fontsource/monoton';
+
+import { Picture, Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import heroImage from '@images/hero-section.png';
+import advantagesImage from '@images/advantages.jpg';
 import MenuLink from '@components/ui/MenuLink.astro';
 import { PATH } from '@constants/navigation.ts';
 import ArrowLink from '@components/ui/ArrowLink.astro';
 import Section from '@components/Section/index.astro';
+import { ADVANTAGES } from '@constants/advantages.ts';
 ---
 
 <BaseLayout title="Main Page">
@@ -15,7 +19,7 @@ import Section from '@components/Section/index.astro';
     <div class="lg:flex-grow w-full flex flex-col lg:items-start items-center">
       <span class="text-xs bg-slate-100 p-1 mb-6">Привіт, новий гостю!</span>
       <h1
-        class="text-[46px] sm:text-[54px] lg:text-[72px] leading-none text-dark-blue text-center lg:text-left font-semibold mb-6"
+        class="text-[46px] sm:text-[54px] lg:text-[62px] xl:text-[72px] leading-none text-dark-blue text-center lg:text-left font-semibold mb-6"
       >
         Ми не просто готуємо, ми створюємо ваші емоції !
       </h1>
@@ -30,5 +34,54 @@ import Section from '@components/Section/index.astro';
     </div>
   </Section>
 
-  <Section class="h-[100px] bg-green-500"><h1>Another section</h1></Section>
+  <Section slotWrapperClass="flex flex-col-reverse lg:flex-row gap-12 pb-20 lg:pb-0">
+    <div
+      class="lg:basis-6/12 max-h-[400px] lg:max-h-[700px] flex justify-center w-full lg:justify-start"
+    >
+      <div class="lg:max-w-[90%] max-h-full lg:max-h-[90%] relative max-w-[90%]">
+        <Image
+          class="object-cover h-full object-center lg:object-bottom"
+          src={advantagesImage}
+          alt={'Advantages section main image'}
+        />
+        <div
+          class="absolute shadow-md w-[180px] h-[180px] lg:w-[230px] lg:h-[230px] bg-white p-8 bottom-0 right-0 translate-y-1/4 translate-x-1/4"
+        >
+          <div
+            class="border-dotted text-center flex flex-col items-center justify-center border-[3px] border-gray-300 w-full h-full"
+          >
+            <span class="font-monoton inline-block mb-1 lg:mb-2 text-5xl lg:text-6xl text-dark-blue"
+              >7</span
+            >
+            <span class="text-dark-blue font-semibold text-sm leading-none lg:text-xl"
+              >Років <br />досвіду</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lg:basis-6/12 flex flex-col lg:max-w-[500px] justify-center">
+      <h3 class="text-4xl text-dark-blue font-semibold leading-none mb-12">
+        Ми робимо більше, ніж ви очікуєте
+      </h3>
+      <ol>
+        {
+          ADVANTAGES.map(({ text, title }, index) => (
+            <li class="mb-8 flex">
+              <span class="font-monoton text-[36px] lg:text-[42px] leading-7 text-primary mr-6">
+                0{index + 1}
+              </span>
+              <p class="text-xl font-semibold leading-none">
+                <span class="inline-block text-dark-blue mb-4">{title}</span>
+                <span class="text-sm font-normal inline-block">{text}</span>
+              </p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </Section>
+
+  <Section class="h-[300px] bg-orange-200"><h3>Other section</h3></Section>
 </BaseLayout>
